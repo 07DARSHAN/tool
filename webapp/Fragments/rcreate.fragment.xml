@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+    <Dialog id="createEntryDialog" title="Create Entry" draggable="true" resizable="true" contentWidth="400px">
+        <content>
+            <form:SimpleForm id="createEntryForm" binding="{/selectedEntry}">
+                <Label text="Product"/>
+                <Select id="createEntryProductDropdown" items="{ path: '/products' }">
+                    <core:Item key="{Product}" text="{Product}" />
+                </Select>
+
+                <Label text="Project"/>
+                <Select id="createEntryProjectDropdown" items="{ path: '/projects' }">
+                    <core:Item key="{Project}" text="{Project}" />
+                </Select>
+
+                <Label text="Category"/>
+                <Input id="category" value="{Category}" width="100%" placeholder="Enter Category"/>
+
+                <Label text="Customer"/>
+                <Input id="customer" value="{Customer}" width="100%" placeholder="Enter Customer Name"/>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button text="Save" press="onSaveEntry" type="Success"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="onCustomEditCancelPress" type="Reject"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

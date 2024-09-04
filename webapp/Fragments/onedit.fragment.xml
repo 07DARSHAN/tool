@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
+    <Dialog id="editProjectDialog" title="Edit Project" draggable="true" resizable="true" contentWidth="400px">
+        <content>
+            <form:SimpleForm id="editProjectForm" binding="{editProjectRecord>/}">
+                <Label text="Project"/>
+                <Input value="{editProjectRecord>Project}" width="100%" placeholder="Enter Project Name"/>
+                <Label text="Product"/>
+                <Input value="{editProjectRecord>Product}" width="100%" placeholder="Enter Product Name"/>
+                <Label text="Category"/>
+                <Input value="{editProjectRecord>Customer}" width="100%" placeholder="Enter Customer Name"/>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button text="Save" press="onSaveEditProject" type="Success"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancel" press="onCancelEditProject" type="Reject"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

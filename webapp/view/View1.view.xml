@@ -1,0 +1,221 @@
+<mvc:View
+    controllerName="customerportal.controller.View1"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:tnt="sap.tnt"
+    height="100%">
+    <tnt:ToolPage id="toolPage">
+        <tnt:sideContent>
+            <tnt:SideNavigation
+                expanded="true"
+                selectedKey="{/selectedKey}"
+                itemSelect=".onItemSelect">
+                <tnt:NavigationList items="{path: '/navigation'}">
+                    <tnt:NavigationListItem
+                        text="{title}"
+                        icon="{icon}"
+                        enabled="{enabled}"
+                        expanded="{expanded}"
+                        items="{items}"
+                        key="{key}">
+                        <tnt:NavigationListItem
+                            text="{title}"
+                            key="{key}"
+                            enabled="{enabled}"/>
+                    </tnt:NavigationListItem>
+                </tnt:NavigationList>
+                <tnt:fixedItem>
+                    <tnt:NavigationList items="{path: '/products'}">
+                        <tnt:NavigationListItem
+                            text="{title}"
+                            icon="{icon}"/>
+                    </tnt:NavigationList>
+                </tnt:fixedItem>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <NavContainer
+                id="pageContainer"
+                initialPage="page2">
+                <pages>
+                    <ScrollContainer
+                        id="root1"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                        class="sapUiContentPadding">
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button 
+                                icon="sap-icon://create"
+                                press="onCreate"
+                                type="Success"/>
+                            <Button
+                                icon="sap-icon://edit"
+                                press="onEdit"
+                                type="Attention"/>
+                            <Button
+                                icon="sap-icon://delete"
+                                press="onDelete"
+                                type="Reject"/>
+                        </Toolbar>
+                        <Table
+                            id="productTable"
+                            items="{/products}"
+                            mode="MultiSelect"
+                            selectionChange="onSelectionChange">
+                            <columns>
+                                <Column>
+                                    <Text text="S.No" />
+                                </Column>
+                                <Column>
+                                    <Text text="Product" />
+                                </Column>
+                                <Column>
+                                    <Text text="CreatedDate" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{SNo}" />
+                                        <Text text="{Product}" />
+                                        <Text text="{CreatedDate}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </ScrollContainer>
+                    <ScrollContainer
+                        id="root2"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                        class="sapUiContentPadding">
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button
+                                icon="sap-icon://create"
+                                press="Createon"
+                                type="Success"/>
+                            <Button
+                                icon="sap-icon://edit"
+                                press="Editon"
+                                type="Attention"/>
+                            <Button
+                                icon="sap-icon://delete"
+                                press="Deleteon"
+                                type="Reject"/>
+                        </Toolbar>
+                        <!-- Table for Projects -->
+                        <Table
+                            id="projectTable"
+                            items="{/projects}"
+                            mode="MultiSelect"
+                            selectionChange="onProjectSelectionChange">
+                            <columns>
+                                <Column>
+                                    <Text text="S.No" />
+                                </Column>
+                                <Column>
+                                    <Text text="Project" />
+                                </Column>
+                                <Column>
+                                    <Text text="Product" />
+                                </Column>
+                                <Column>
+                                    <Text text="Customer" />
+                                </Column>
+                                <Column>
+                                    <Text text="CreatedDate" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{SNo}" />
+                                        <Text text="{Project}" />
+                                        <Text text="{Product}" />
+                                        <Text text="{Customer}" />
+                                        <Text text="{CreatedDate}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </ScrollContainer>
+                    <ScrollContainer
+                        id="root3"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                        class="sapUiContentPadding">
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button
+                                icon="sap-icon://create"
+                                press="onCreatePress"
+                                type="Success"/>
+                            <Button
+                                icon="sap-icon://edit"
+                                press="onEditPress"
+                                type="Attention"/>
+                            <Button
+                                icon="sap-icon://delete"
+                                press="onDeletePress"
+                                type="Reject"/>
+                        </Toolbar>
+                        <Table
+                            id="categoryTable"
+                            items="{/selectedEntry}"
+                            mode="MultiSelect"
+                            selectionChange="onSelectionChange">
+                            <columns>
+                                <Column>
+                                    <Text text="S.No" />
+                                </Column>
+                                <Column>
+                                    <Text text="Product" />
+                                </Column>
+                                <Column>
+                                    <Text text="Project" />
+                                </Column>
+                                <Column>
+                                    <Text text="Category" />
+                                </Column>
+                                <Column>
+                                    <Text text="Customer" />
+                                </Column>
+                                <Column>
+                                    <Text text="CreatedDate" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{SNo}" />
+                                        <Text text="{Product}" />
+                                        <Text text="{Project}" />
+                                        <Text text="{Category}" />
+                                        <Text text="{Customer}" />
+                                        <Text text="{CreatedDate}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                        </ScrollContainer>
+                         <ScrollContainer
+                        id="question"
+                        horizontal="false"
+                        vertical="true"
+                        height="100%"
+                        class="sapUiContentPadding">
+
+                        
+                        <!-- Add your content for the "question" scroll container here -->
+                    
+                    </ScrollContainer>
+                </pages>
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>

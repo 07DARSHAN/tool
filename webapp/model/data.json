@@ -1,0 +1,28 @@
+{
+  "selectedKey": "page2",
+  "navigation": [
+      {
+          "title": "Product",
+          "icon": "sap-icon://product",
+          "key": "root1"
+      },
+      {
+          "title": "Project",
+          "icon": "sap-icon://building",
+          "key": "root2"
+      },
+      {
+          "title": "Category",
+          "icon": "sap-icon://building",
+          "key": "root3"
+      }
+  ],
+  "products": [],
+  "newRecord": {
+      "Product": "",
+      "CreatedDate": ""
+  },
+  "projects": [],
+  "categories": [],
+  "selectedEntry":[]
+}
