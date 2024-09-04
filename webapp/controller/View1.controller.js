@@ -26,7 +26,7 @@ sap.ui.define([
             // Perform actions based on the selected item
             this.byId("pageContainer").to(this.getView().createId(key));
         },
-        
+        // sample
         onCreate: function () {
             // Open a dialog for adding a new record
             if (!this._oDialog) {
