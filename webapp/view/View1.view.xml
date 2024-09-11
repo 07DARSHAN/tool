@@ -46,10 +46,10 @@
                         class="sapUiContentPadding">
                         <Toolbar>
                             <ToolbarSpacer/>
-                            <!-- <Button 
+                            <Button 
                                 icon="sap-icon://create"
                                 press="onCreate"
-                                type="Success"/> -->
+                                type="Success"/>
                             <Button
                                 icon="sap-icon://edit"
                                 press="onEdit"
