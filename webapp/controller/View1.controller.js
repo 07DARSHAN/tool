@@ -20,7 +20,7 @@ sap.ui.define([
             }
         },
 
-        // sample
+        
 
         onItemSelect: function (oEvent) {
             var item = oEvent.getParameter("item");
