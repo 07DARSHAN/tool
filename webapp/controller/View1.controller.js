@@ -42,7 +42,7 @@ sap.ui.define([
             this._oDialog.setModel(new JSONModel(oNewRecord), "newRecord"); // Set new instance as model for the dialog
             this._oDialog.open();
         },
-    // sam
+    
         onSave: function () {
             // Close the dialog after saving the new record
             this._oDialog.close();
