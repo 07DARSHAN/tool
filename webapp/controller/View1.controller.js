@@ -20,6 +20,8 @@ sap.ui.define([
             }
         },
 
+        // sam
+
         onItemSelect: function (oEvent) {
             var item = oEvent.getParameter("item");
             var key = item.getKey(); // You can use this key to identify the selected item
