@@ -19,8 +19,7 @@ sap.ui.define([
                 oModel.setData(oData);
             }
         },
-
-        // sam
+        
 
         onItemSelect: function (oEvent) {
             var item = oEvent.getParameter("item");
