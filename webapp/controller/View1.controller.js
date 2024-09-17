@@ -28,7 +28,7 @@ sap.ui.define([
             this.byId("pageContainer").to(this.getView().createId(key));
         },
         
-        
+        // sam
         onCreate: function () {
             // Open a dialog for adding a new record
             if (!this._oDialog) {
