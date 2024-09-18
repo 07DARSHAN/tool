@@ -1,56 +1,56 @@
 # Comprehensive CI/CD configuration using YAML for a Fiori application on SAP BTP Cloud Foundry
-# sam
+
 General:
   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"  # Specify the Cloud Foundry API endpoint
-  cfOrg: "94acbf1etrial"                             # Specify your Cloud Foundry organization
-  cfSpace: "dev"                                      # Specify the Cloud Foundry space
-  cfAppName: "toolquestionnaire (1)"                                  # The name of your application
-  cfCredentialsId: "deploy-to-cf-credentials"                 # ID for the credentials to use for deployment
+  cfOrg: "94acbf1etrial"                                     # Specify your Cloud Foundry organization
+  cfSpace: "dev"                                             # Specify the Cloud Foundry space
+  cfAppName: "toolquestionnaire (1)"                         # The name of your application
+  cfCredentialsId: "deploy-to-cf-credentials"                # ID for the credentials to use for deployment
 
 Release:
-  cloudFoundryDeploy: true                                    # Enable deployment to Cloud Foundry
+  cloudFoundryDeploy: true                                   # Enable deployment to Cloud Foundry
   tmsUpload: true                                            # Set to true if using SAP TMS for transport management
 
 Steps:
   artifactPrepareVersion:
-    versioningType: "cloud_noTag"                             # Defines the versioning strategy (no SCM tags)
+    versioningType: "cloud_noTag"                            # Defines the versioning strategy (no SCM tags)
 
   npmExecuteLint:
-    failOnError: true                                         # Should the pipeline stop on linter errors
+    failOnError: true                                        # Should the pipeline stop on linter errors
 
   buildMTA:
-    buildTarget: "./target"                                   # Target directory for built artifacts
-    buildMtar: true                                           # Whether to build MTAR file for deployment
+    buildTarget: "./target"                                  # Target directory for built artifacts
+    buildMtar: true                                          # Whether to build MTAR file for deployment
 
   executeTests:
-    unitTests: true                                           # Execute unit tests
-    integrationTests: true                                    # Execute integration tests
+    unitTests: true                                          # Execute unit tests
+    integrationTests: true                                   # Execute integration tests
 
   cloudFoundryDeploy:
-    mtaDeployParameters: "-f --version-rule ALL"              # MTA deployment parameters (force deploy, version rule)
-    cfDeployTarget: "qa"                                      # Deployment target, can be switched to production for prod deployment
+    mtaDeployParameters: "-f --version-rule ALL"             # MTA deployment parameters (force deploy, version rule)
+    cfDeployTarget: "qa"                                     # Deployment target, can be switched to production for prod deployment
 
   tmsUpload:
-    nodeName: "qa"  
-    credentialsId: "ctms"                                          # Node name for TMS if tmsUpload is enabled
+    nodeName: "qa"
+    credentialsId: "ctms"                                    # Node name for TMS if tmsUpload is enabled
 
   customScript:
-    scriptPath: "path/to/your/custom/script.sh"               # Path to your custom script
-    executeOn: "afterTests"                                   # Define when to execute the custom script (afterTests, beforeDeploy, etc.)
-    enabled: true                                             # Enable execution of the custom script
+    scriptPath: "path/to/your/custom/script.sh"              # Path to your custom script
+    executeOn: "afterTests"                                  # Define when to execute the custom script (afterTests, beforeDeploy, etc.)
+    enabled: true                                            # Enable execution of the custom script
 
 # Multi-stage deployment configuration
 Stages:
   qa:
-    cfSpace: "qa"                                             # QA space for testing before production
-    executeSmokeTests: true                                   # Execute smoke tests in QA environment
-    approvalRequired: true                                    # Manual approval required before production deployment
+    cfSpace: "qa"                                            # QA space for testing before production
+    executeSmokeTests: true                                  # Execute smoke tests in QA environment
+    approvalRequired: true                                   # Manual approval required before production deployment
 
   Production:
-    cfSpace: "production"                                     # Production space
-    executePerformanceTests: true                             # Execute performance tests
-    cfDeployTarget: "Production"                              # Production deployment target
-    postDeploySanityCheck: true                               # Sanity check after deployment
+    cfSpace: "production"                                    # Production space
+    executePerformanceTests: true                            # Execute performance tests
+    cfDeployTarget: "Production"                             # Production deployment target
+    postDeploySanityCheck: true                              # Sanity check after deployment
 
 # Additional custom scripts or automation tasks as necessary
 AdditionalTasks:
