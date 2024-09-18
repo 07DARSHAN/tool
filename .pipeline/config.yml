@@ -5,7 +5,7 @@ General:
   cfOrg: "94acbf1etrial"                                     # Specify your Cloud Foundry organization
   cfSpace: "dev"                                             # Specify the Cloud Foundry space
   cfAppName: "toolquestionnaire (1)"                         # The name of your application
-  cfCredentialsId: "deploy-to-cf-credentials"                # ID for the credentials to use for deployment
+  cfCredentialsId: "ctms"                # ID for the credentials to use for deployment
 
 Release:
   cloudFoundryDeploy: true                                   # Enable deployment to Cloud Foundry
