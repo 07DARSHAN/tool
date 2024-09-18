@@ -31,7 +31,8 @@ Steps:
     cfDeployTarget: "qa"                                      # Deployment target, can be switched to production for prod deployment
 
   tmsUpload:
-    nodeName: "qa"                                            # Node name for TMS if tmsUpload is enabled
+    nodeName: "qa"  
+    credentialsId: "ctms"                                          # Node name for TMS if tmsUpload is enabled
 
   customScript:
     scriptPath: "path/to/your/custom/script.sh"               # Path to your custom script
