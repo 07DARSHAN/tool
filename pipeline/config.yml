@@ -13,9 +13,8 @@ stages:
   - name: "Release"
     type: "cf-deploy"
     script: |
-     cf login -a https://api.cf.us10-001.hana.ondemand.com -u "DARSHAN G" -p "Darshan@2002"
-     cf push
-
+      cf login -a https://api.cf.us10-001.hana.ondemand.com -u "DARSHAN G" -p "Darshan@2002" -o "94acbf1etrial_dpeqa-2zotouf0" -s "qa"
+      cf push
 
 notifications:
   - type: "email"
