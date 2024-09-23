@@ -1,3 +1,0 @@
-tmsUpload:
-  nodeName: "qa"  # This should be the correct node name as per your TMS configuration
-  credentialsId: "ctms"  # Ensure these are the correct credentials with proper permissions
