@@ -4,6 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:tnt="sap.tnt"
     height="100%">
+    <!-- sam -->
     <tnt:ToolPage id="toolPage">
         <tnt:sideContent>
             <tnt:SideNavigation
