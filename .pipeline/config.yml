@@ -2,7 +2,7 @@
 
 General:
   cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"  # Specify the Cloud Foundry API endpoint
-  cfOrg: "94acbf1etrial"                                     # Specify your Cloud Foundry organization
+  cfOrg: "94acbf1etrial_dpeqa-2zotouf0"                                     # Specify your Cloud Foundry organization
   cfSpace: "dev"                                             # Specify the Cloud Foundry space
   cfAppName: "toolquestionnaire (1)"                         # The name of your application
   cfCredentialsId: "ctms"                # ID for the credentials to use for deployment
